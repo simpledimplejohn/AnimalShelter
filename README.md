@@ -58,7 +58,7 @@ This is a database with an API back end that's accessible by POSTMAN or through 
     Select: `POST` | Address: `http://localhost:5000/api/animals/{id}`  
     In the body create your animal as follows:  
     `{`   
-    `"animalId": 1,`   
+    `"animalId": 6,`   
     `"species": "Bunny",`   
     `"name": "Very Bitty",`   
     `"age": 1,`   
@@ -68,7 +68,7 @@ This is a database with an API back end that's accessible by POSTMAN or through 
     Select: `PUT` | Address: `http://localhost:5000/api/animals/{id}`  
     In the body create your animal as follows:  
     `{`   
-    `"animalId": 1,`   
+    `"animalId": 6,`   
     `"species": "Bunny",`   
     `"name": "VERY Very Bitty",`   
     `"age": 1,`   

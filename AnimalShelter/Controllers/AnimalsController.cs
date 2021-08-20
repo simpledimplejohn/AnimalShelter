@@ -7,6 +7,16 @@ using System.Linq;
 
 namespace AnimalShelter.Controllers
 {
+  public class PaginationModel
+  {
+    public List<Animal> Data { get; set; }
+    public int Total { get; set; }
+    public int PerPage { get; set; }
+    public int Page { get; set; }
+    public string PreviousPage { get; set; }
+    public string NextPage { get; set; }
+  }
+  
   [Route("api/[controller]")] //setting the url you have to go to [placeholder for controller name] animals in this case
   [ApiController]
   public class AnimalsController : ControllerBase
