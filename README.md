@@ -2,7 +2,7 @@
 ### by [John Blalock](https://github.com/simpledimplejohn) 
 
 ### __Description__
-This is a database with an API back end that's accessible by POSTMAN or through an API client controller.  It is build with ASP.Net Core and has full CRUD functionality in place.  It follows RESTful conventions.
+This is a database with an API back end that's accessible by POSTMAN or through an API client controller.  It is build with ASP.Net Core and has full CRUD functionality in place.  It follows RESTful conventions and includes pagination of results at the controller level.
 
 
 ### __Technologies Used__
@@ -14,6 +14,7 @@ This is a database with an API back end that's accessible by POSTMAN or through 
 * _EF_Core_
 * _Migration_
 * _API Restful_
+* _Pagination_
 
 
 ### __Setup/Installation__
@@ -75,6 +76,11 @@ This is a database with an API back end that's accessible by POSTMAN or through 
     * _species with `http://localhost:5000/api/animals/?species=[species name]`
     * _gender with `http://localhost:5000/api/animals/?species=[gender name]`
     * _name with `http://localhost:5000/api/animals/?species=[name]`
+24. _Pagination Default returns 2 results per page_   
+    _To change the results go to `Line 68` of `AnimalsController.cs`_   
+    _Change `perPage = 2;` to your desired value_
+
+
 
 
 
