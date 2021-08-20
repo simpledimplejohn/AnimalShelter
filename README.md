@@ -5,7 +5,7 @@
 ### by [John Blalock](https://github.com/simpledimplejohn) 
 
 ### __Description__
-A webapp with a database that is designed to show my ability to use ASP.Net Core and MYSQL using the Many To Many relationships as well as the use of Identity for user authentication.
+This is a database with an API back end that's accessible by POSTMAN or through an API client controller.  It is build with ASP.Net Core and has full CRUD functionality in place.  It follows RESTful conventions.
 
 
 ### __Technologies Used__
@@ -14,10 +14,9 @@ A webapp with a database that is designed to show my ability to use ASP.Net Core
 * _ASP.Net Core_
 * _NuGet_
 * _MySQL Database_
-* _Razor_
 * _EF_Core_
 * _Migration_
-* _Identity_
+* _API Restful_
 
 
 ### __Setup/Installation__
@@ -27,11 +26,11 @@ A webapp with a database that is designed to show my ability to use ASP.Net Core
 3. _Navigate to the Factory directory_
 4. _add a filed called `appsettings.json`_
 5. _include this code in the file:_
-    `{`
-`  "ConnectionStrings": {`
-`      "DefaultConnection": "Server=localhost;Port=3306;=john_blalock;uid=root;pwd=[PASSWORD];"`
-`  }`
-`}`
+    `{`  
+`  "ConnectionStrings": {`  
+`      "DefaultConnection": "Server=localhost;Port=3306;=john_blalock;uid=root;pwd=[PASSWORD];"`  
+`  }`  
+`}`  
 6. _Open MySQL Workbench_
 7. _Log in and connected to the Local instance 3306_
 8. _Navigate to the Administration tab_
@@ -47,6 +46,38 @@ A webapp with a database that is designed to show my ability to use ASP.Net Core
     `dotnet run` 
 15. _This should run the app on local server 5000_
 16. _Navigate to HTTP://localhost:5000_
+17. _To Access CRUD functionality download and run [Postman](https://www.postman.com/downloads/)_
+18. _Start a new workspace with the Building Blocks of HTTP Request_
+19. _To see a list of all animals:_
+    Select: `GET` | Address: `http://localhost:5000/api/animals`  
+20. _To see details of a specific animal id:_  
+    Select: `GET` | Address: `http://localhost:5000/api/animals/{id}`  
+21. _To delete an animal:_  
+    Select: `DELETE` | Address: `http://localhost:5000/api/animals/{id}`  
+22. _To add an animal:_  
+    Select: `POST` | Address: `http://localhost:5000/api/animals/{id}`  
+    In the body create your animal as follows:  
+    `{`   
+    `"animalId": 1,`   
+    `"species": "Bunny",`   
+    `"name": "Very Bitty",`   
+    `"age": 1,`   
+    `"gender": "Male"`   
+    `}`   
+22. _To change details of an animal:_  
+    Select: `PUT` | Address: `http://localhost:5000/api/animals/{id}`  
+    In the body create your animal as follows:  
+    `{`   
+    `"animalId": 1,`   
+    `"species": "Bunny",`   
+    `"name": "VERY Very Bitty",`   
+    `"age": 1,`   
+    `"gender": "Male"`   
+    `}`   
+
+
+
+
 
 
 ### __Known Bugs / Future Goals__
