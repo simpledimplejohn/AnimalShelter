@@ -16,12 +16,12 @@ namespace AnimalShelter.Models
                     new Animal { AnimalId = 2, Name = "Bobo", Species = "Lizard", Age = 1, Gender = "Unknown" },
                     new Animal { AnimalId = 3, Name = "Smol", Species = "Holland Lop", Age = 1, Gender = "Female" },
                     new Animal { AnimalId = 4, Name = "vSmol", Species = "Holland Lop", Age = 1, Gender = "Male" },
-                    new Animal { AnimalId = 5, Name = "Gus", Species = "Holland Lop", Age = 2, Gender = "Male" }
+                    new Animal { AnimalId = 5, Name = "Gus", Species = "Holland Lop", Age = 2, Gender = "Male" },
                     new Animal { AnimalId = 6, Name = "Commando", Species = "Holland Lop", Age = 3, Gender = "Female" },
                     new Animal { AnimalId = 7, Name = "Bubba", Species = "Lizard", Age = 1, Gender = "Unknown" },
                     new Animal { AnimalId = 8, Name = "The Onion", Species = "Bunny", Age = 1, Gender = "Female" },
                     new Animal { AnimalId = 9, Name = "Big Nose", Species = "Bunny", Age = 1, Gender = "Male" },
-                    new Animal { AnimalId = 10, Name = "Hungry", Species = "Bunny", Age = 2, Gender = "Male" }
+                    new Animal { AnimalId = 10, Name = "Hungry", Species = "Bunny", Age = 2, Gender = "Male" },
                     new Animal { AnimalId = 11, Name = "Muffin", Species = "Holland Lop", Age = 3, Gender = "Female" },
                     new Animal { AnimalId = 12, Name = "Dumbo", Species = "Holland Lop", Age = 1, Gender = "Unknown" },
                     new Animal { AnimalId = 13, Name = "Potato", Species = "Bunny", Age = 1, Gender = "Female" },
