@@ -16,7 +16,7 @@ namespace AnimalShelter.Controllers
     public string PreviousPage { get; set; }
     public string NextPage { get; set; }
   }
-  
+
   [Route("api/[controller]")] //setting the url you have to go to [placeholder for controller name] animals in this case
   [ApiController]
   public class AnimalsController : ControllerBase
@@ -43,8 +43,9 @@ namespace AnimalShelter.Controllers
     }
     // where you search
     // GET api/animals
+// PAGINATION UPDATE
     [HttpGet] //similar to our index, async means wrap in Task, retruning an action result IEnumerable = list that we then loop through
-    public async Task<ActionResult<IEnumerable<Animal>>> Get(string species, string gender, string name)//name uses model binding
+    public async Task<ActionResult<PaginationModel>> Get(string species, string gender, string name, int page, int perPage)
     {
       var query = _db.Animals.AsQueryable(); //collect list of all animals from database returned as a LINQ object that is queryable
 
@@ -62,7 +63,32 @@ namespace AnimalShelter.Controllers
       {
         query = query.Where(query => query.Name == name);
       }
-      return await query.ToListAsync(); //turns the query into a list
+      List<Animal> animals = await query.ToListAsync();
+
+      if (perPage == 0) perPage = 2;
+
+      int total = animals.Count;
+      List<Animal> animalsPage = new List<Animal>();
+
+      if (page < (total / perPage))
+      {
+        animalsPage = animals.GetRange(page * perPage, perPage);
+      }
+
+      if (page == (total / perPage))
+      {
+        animalsPage = animals.GetRange(page * perPage, total - (page * perPage));
+      }
+
+      return new PaginationModel()
+      {
+        Data = animalsPage,
+        Total = total,
+        PerPage = perPage,
+        Page = page,
+        PreviousPage = page == 0 ? $"/api/animals?page={page}" : $"/api/animals?page={page - 1}",
+        NextPage = $"/api/animals?page={page + 1}",
+      };
     }
 
     // POST api/animals
