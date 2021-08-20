@@ -1,6 +1,3 @@
-## SQL Design
-![screenshot](database_image.png)
-
 # __Bunny Rescue Animal Shelter__
 ### by [John Blalock](https://github.com/simpledimplejohn) 
 
@@ -74,7 +71,10 @@ This is a database with an API back end that's accessible by POSTMAN or through 
     `"age": 1,`   
     `"gender": "Male"`   
     `}`   
-
+23. _Database is searchable using the following terms:_  
+    * _species with `http://localhost:5000/api/animals/?species=[species name]`
+    * _gender with `http://localhost:5000/api/animals/?species=[gender name]`
+    * _name with `http://localhost:5000/api/animals/?species=[name]`
 
 
 
